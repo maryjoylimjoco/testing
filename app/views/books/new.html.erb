@@ -1,0 +1,12 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+      <%= form_for @book do |f| %>
+        <%= render 'shared/forms/text', column_name: :title, placeholder: 'Book title', f: f %>
+        <%= render 'shared/forms/text', column_name: :description, placeholder: 'Book title', f: f %>
+        <%= render 'shared/forms/text', column_name: :price, placeholder: 'Selling price', type: 'number', f: f %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

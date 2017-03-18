@@ -1,1 +1,35 @@
-<h2>Books</h2>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-3">Booktopia</h1>
+    <p class="lead">A website where you can sell your second hand books.</p>
+    <hr class="my-4">
+    <p class="lead">
+      <%= link_to new_book_path, class: 'btn btn-primary btn-lg' do %>
+        Add new book
+      <% end %>
+    </p>
+  </div>
+
+  <% if @books.any? %>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Date Posted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+          <tr>
+            <td><%= book.title %></td>
+            <td><%= book.description %></td>
+            <td><%= book.price %></td>
+            <td><%= book.created_at.strftime('%Y-%m-%d') %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
