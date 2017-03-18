@@ -16,6 +16,10 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capybara', '~> 2.5'
