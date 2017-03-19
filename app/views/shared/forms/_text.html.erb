@@ -2,5 +2,10 @@
 
 <div class="form-group">
   <%= f.label column_name %>
-  <%= f.text_field column_name, placeholder: placeholder, type: type, class: 'form-control' %>
+  <%= f.text_field column_name, placeholder: placeholder, type: type, class: "form-control" %>
+  <% if f.object.errors[column_name] %>
+    <p class="form-text text-muted">
+      <%= f.object.errors[column_name].join(', ') %>
+    </p>
+  <% end %>
 </div>
